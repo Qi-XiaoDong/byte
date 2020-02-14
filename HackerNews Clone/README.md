@@ -1,5 +1,5 @@
 ## 运行
-` npm serve`
+` vue serve`
 
 ## Vue3 快速原型开发
 
