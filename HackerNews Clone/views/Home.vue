@@ -25,7 +25,6 @@
               v-for="ele in infoArr"
               :key="ele.time"
               :info="ele"
-             
             />
           </div>
         </div>
@@ -155,10 +154,6 @@ export default {
     },
     /**截取当前要渲染的数据 */
     sliceInfo (curpage = 1) {
-      console.log(1)
-      console.log(((curpage - 1) * this.pageSize));
-      console.log((curpage * this.pageSize));
-
       this.infoArr = this.info.slice(((curpage - 1) * this.pageSize),(curpage * this.pageSize));
     },
     /**对数据初始化 */
@@ -218,6 +213,7 @@ export default {
     font-size: 12px;
     color: #bbb;
     margin-right: 30px;
+    
   }
   .nav a.active{
     color: #222;
@@ -226,7 +222,8 @@ export default {
   .main-warp {
     background-color: #eee;
     padding:10px;
-    
+    /* min-height: calc(100% - 123px); */
+    min-height: 490px
   }
   .main{
     height: 100%;
@@ -253,8 +250,10 @@ export default {
   }
 
   .footer{
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
     height: 66px;
-    background-color:#fff;
     text-align: center;
     line-height: 66px;
     font-size: 12px;

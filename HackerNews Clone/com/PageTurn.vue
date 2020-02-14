@@ -36,24 +36,18 @@ export default {
     turnPage (num) {
       if (num < 1 ){
         if (this.curPage === 1) {
-          console.log('不可以点击');
           return ;
         }
         this.curPage = this.curPage + num;
-        console.log(this.curPage);
         this.statePage = this.curPage > 10 ? this.statePage - 1 : this.statePage = 0 ;
-         // 告诉父级当前页码；
-          this.hah(this.curPage);
+          this.tallCur(this.curPage);
       }else{
         if (this.curPage >= this.PageNumber)  {
-          console.log('不可以点击');
           return ;
         }
         this.curPage = this.curPage + num;
-        console.log(this.curPage);
         this.statePage = this.curPage > 10 ? this.statePage + 1 : this.statePage = 0 ;
-         // 告诉父级当前页码；
-          this.hah(this.curPage);
+        this.tallCur(this.curPage);
       }
     },
     changePage(num){  // 点击页码跳转
@@ -62,9 +56,9 @@ export default {
       }
       this.curPage = num ;
       // 告诉父级当前页码；
-      this.hah(this.curPage);
+      this.tallCur(this.curPage);
     },
-    hah (cur) {
+    tallCur (cur) {
       this.$parent.sliceInfo(cur);
     }
 
@@ -86,7 +80,6 @@ export default {
 
 <style scoped>
   @import '../assets/css/common.css';
-
   .page-turn-wrap{
     user-select:none;
     height: 45px;
